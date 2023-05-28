@@ -1,4 +1,8 @@
 import Review from "@/components/review"
+import ReviewsEmpty from "@/components/reviews/reviews-empty"
+import ReviewsError from "@/components/reviews/reviews-error"
+import ReviewsHeader from "@/components/reviews/reviews-header"
+import ReviewsMock from "@/components/reviews/reviews-mock"
 import { useFakeData } from "@/components/use-fake-data"
 import { comparePositions } from "@/libs/sorting"
 import { Reviews, ReviewsProps } from "@/types"
@@ -13,9 +17,9 @@ export default function Reviews({ chunkId }: ReviewsProps) {
   const { data, isLoading, isError } = useFakeData()
   const reviews = data?.toplists as Reviews | undefined
 
-  if (isLoading) return <div>Loading...</div>
-  if (isError) return <div>Error</div>
-  if (!reviews) return <div>No reviews</div>
+  if (isLoading) return <ReviewsMock />
+  if (isError) return <ReviewsError />
+  if (!reviews) return <ReviewsEmpty />
 
   const lang = `${data.language}-${data.country}`
   const key = data.hub_toplists_order
@@ -25,14 +29,7 @@ export default function Reviews({ chunkId }: ReviewsProps) {
   return (
     <>
       <div className="max-w-screen-xl mx-auto p-2">
-        <header className="bg-yellow-500 text-yellow-950 hidden lg:block">
-          <div className="grid gap-8 grid-cols-4 place-items-center p-3">
-            <h2>Casino</h2>
-            <h2>Bonus</h2>
-            <h2>Features</h2>
-            <h2>Play</h2>
-          </div>
-        </header>
+        <ReviewsHeader />
 
         <ul lang={lang} data-key={key} className="divide-y-2 divide-gray-300">
           {reviewsChunk.map((review) => (
