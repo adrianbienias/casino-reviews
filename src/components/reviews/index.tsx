@@ -1,7 +1,6 @@
 import Review from "@/components/review"
 import ReviewsEmpty from "@/components/reviews/reviews-empty"
 import ReviewsError from "@/components/reviews/reviews-error"
-import ReviewsHeader from "@/components/reviews/reviews-header"
 import ReviewsMock from "@/components/reviews/reviews-mock"
 import { useFakeData } from "@/components/use-fake-data"
 import { comparePositions } from "@/libs/sorting"
@@ -28,15 +27,11 @@ export default function Reviews({ chunkId }: ReviewsProps) {
 
   return (
     <>
-      <div className="max-w-screen-xl mx-auto p-2">
-        <ReviewsHeader />
-
-        <ul lang={lang} data-key={key} className="divide-y-2 divide-gray-300">
-          {reviewsChunk.map((review) => (
-            <Review key={review.brand_id} review={review} />
-          ))}
-        </ul>
-      </div>
+      <ul lang={lang} data-key={key} className="divide-y-2 divide-gray-300">
+        {reviewsChunk.map((review) => (
+          <Review key={review.brand_id} review={review} />
+        ))}
+      </ul>
     </>
   )
 }
