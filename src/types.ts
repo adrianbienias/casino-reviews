@@ -10,3 +10,8 @@ export type Review = {
   logo: string
   play_url: string
 }
+
+export type StarRatingProps = {
+  rating: number
+  max: number
+}

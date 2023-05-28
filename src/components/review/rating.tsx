@@ -1,3 +1,4 @@
+import StarRating from "@/components/star-rating"
 import { Review } from "@/types"
 
 /**
@@ -7,7 +8,7 @@ export default function Rating({ review }: { review: Review }) {
   return (
     <>
       <div className="text-center ">
-        <p>Rating: {review.info.rating} out of 5 stars</p>
+        <StarRating rating={review.info.rating} max={5} />
         <p className="mt-2">{review.info.bonus}</p>
       </div>
     </>
