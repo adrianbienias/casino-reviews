@@ -36,3 +36,11 @@ I used [Iconify](https://icon-sets.iconify.design/).
 License: https://github.com/iconify/icon-sets/blob/master/collections.md
 
 Straight copy-pasted inline SVG icons to make them portable without additional dependencies.
+
+## Data fetching
+
+I used [SWR](https://swr.vercel.app/).
+
+License: https://github.com/vercel/swr/blob/main/LICENSE
+
+It allows to cache requests and revalidate them on demand as well as mutate requests locally (optimistic UI).

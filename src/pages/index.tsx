@@ -1,14 +1,14 @@
-import Review from "@/components/review"
-import fakeData from "../../mocks/data.json"
+import Reviews from "@/components/reviews"
 
-const tempReviewData = fakeData.toplists[575][0]
-
+/**
+ * Component for home page
+ */
 export default function Home() {
   return (
     <>
-      <ul>
-        <Review review={tempReviewData} />
-      </ul>
+      <main>
+        <Reviews chunkId="575" />
+      </main>
     </>
   )
 }

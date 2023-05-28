@@ -1,3 +1,7 @@
+export type Reviews = {
+  [key: string]: Review[]
+}
+
 export type Review = {
   brand_id: string
   position: number
@@ -14,4 +18,12 @@ export type Review = {
 export type StarRatingProps = {
   rating: number
   max: number
+}
+
+export type ReviewsProps = {
+  chunkId: string
+}
+
+export type PositionParam = {
+  position: number
 }
