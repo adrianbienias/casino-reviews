@@ -1,6 +1,15 @@
 # Casino reviews component
 
-## Running the app
+## TODOs
+
+- [ ] Implement admin dashboard with drag & drop reviews sorting
+- [ ] Double check [instructions](https://github.com/adrianbienias/casino-reviews/blob/main/instructions.pdf)
+
+## Live preview
+
+https://casino-reviews-git-main-bienias.vercel.app/
+
+## Running the app locally
 
 ### Development environment
 
