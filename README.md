@@ -44,3 +44,13 @@ I used [SWR](https://swr.vercel.app/).
 License: https://github.com/vercel/swr/blob/main/LICENSE
 
 It allows to cache requests and revalidate them on demand as well as mutate requests locally (optimistic UI).
+
+## Automated tests
+
+I used [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/).
+
+I haven't tested the whole project extensively, but I provided examples of unit and integration testing to showcase how I would write test for production ready component.
+
+```
+npm run test
+```
