@@ -4,8 +4,8 @@ import useSWR from "swr"
 /**
  * React hook for loading fake data
  */
-export function useFakeData() {
-  const { data, error, isLoading } = useSWR("/api/fake-data", fetcher)
+export function useFakeData<T>() {
+  const { data, error, isLoading } = useSWR<T>("/api/fake-data", fetcher)
 
   return {
     data,

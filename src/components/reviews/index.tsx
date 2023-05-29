@@ -4,7 +4,7 @@ import ReviewsError from "@/components/reviews/reviews-error"
 import ReviewsMock from "@/components/reviews/reviews-mock"
 import { useFakeData } from "@/components/use-fake-data"
 import { comparePositions } from "@/libs/sorting"
-import { Reviews, ReviewsProps } from "@/types"
+import { IncomingData, Reviews, ReviewsProps } from "@/types"
 
 /**
  * Component for list of reviews
@@ -13,15 +13,15 @@ import { Reviews, ReviewsProps } from "@/types"
  * <Reviews chunkId="575" />
  */
 export default function Reviews({ chunkId }: ReviewsProps) {
-  const { data, isLoading, isError } = useFakeData()
-  const reviews = data?.toplists as Reviews | undefined
+  const { data, isLoading, isError } = useFakeData<IncomingData>()
 
   if (isLoading) return <ReviewsMock />
   if (isError) return <ReviewsError />
-  if (!reviews) return <ReviewsEmpty />
+  if (!data || !data.toplists) return <ReviewsEmpty />
 
+  const reviews = data.toplists
   const lang = `${data.language}-${data.country}`
-  const key = data.hub_toplists_order
+  const key = data.key
   const reviewsChunk = reviews[chunkId]
   reviewsChunk.sort(comparePositions)
 

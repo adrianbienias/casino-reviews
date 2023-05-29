@@ -1,3 +1,11 @@
+export type IncomingData = {
+  key: string
+  toplists: Reviews
+  autoload: boolean
+  language: string
+  country: string
+}
+
 export type Reviews = {
   [key: string]: Review[]
 }
