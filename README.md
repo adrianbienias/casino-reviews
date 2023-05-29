@@ -1,10 +1,5 @@
 # Casino reviews component
 
-## TODOs
-
-- [ ] Implement admin dashboard with drag & drop reviews sorting
-- [ ] Double check [instructions](https://github.com/adrianbienias/casino-reviews/blob/main/instructions.pdf)
-
 ## Live preview
 
 ### Dynamically rendered (client side)
@@ -14,6 +9,10 @@ https://casino-reviews-git-main-bienias.vercel.app/
 ### Statically pre-rendered (server side)
 
 https://casino-reviews-git-main-bienias.vercel.app/static
+
+### Admin dashboard
+
+https://casino-reviews-git-main-bienias.vercel.app/admin
 
 ## Running the app locally
 
@@ -69,3 +68,13 @@ I haven't tested the whole project extensively, but I provided examples of unit 
 ```
 npm run test
 ```
+
+## Drag & drop in admin dashboard
+
+It certainly needs more time to polish admin dashboard.
+
+In production I'd go with optimistic UI updates by populating cache of outgoing requests e.g. with:
+
+https://swr.vercel.app/blog/swr-v2.en-US#mutation-and-optimistic-ui
+
+But in this scenario, with mocked API, all outgoing request fails, so I came up with an idea of simply mutating a data object.
