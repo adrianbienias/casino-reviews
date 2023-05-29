@@ -7,7 +7,13 @@
 
 ## Live preview
 
+### Dynamically rendered (client side)
+
 https://casino-reviews-git-main-bienias.vercel.app/
+
+### Statically pre-rendered (server side)
+
+https://casino-reviews-git-main-bienias.vercel.app/static
 
 ## Running the app locally
 
